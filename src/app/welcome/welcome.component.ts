@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
+  showChaika = false;
+  showBack = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.showChaika = true;
+    }, 4000);
+    setTimeout(() => {
+      this.showBack = true;
+    }, 2000);
   }
 
 }
