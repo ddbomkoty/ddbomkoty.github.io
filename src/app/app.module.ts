@@ -9,13 +9,17 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { YouComponent } from './you/you.component';
 import { AboutComponent } from "./about/about.component";
 import { FireComponent } from "./fire/fire.component";
+import { WelcomeComponent } from './welcome/welcome.component';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     YouComponent,
     AboutComponent,
-    FireComponent
+    FireComponent,
+    WelcomeComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

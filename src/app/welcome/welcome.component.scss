@@ -1,0 +1,25 @@
+.welcome-overlay {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background: url("../../assets/bckgrnd.gif");
+  background-repeat: repeat;
+
+  > p {
+    margin: auto;
+  }
+}
+
+.logo {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+
+:host {
+  width: 100%;
+  height: 100%;
+}

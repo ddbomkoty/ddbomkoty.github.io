@@ -1,0 +1,20 @@
+$medium-screen: 992px;
+$tablets-and-large: "only screen and (min-device-width : #{$medium-screen})";
+
+.only-mobile {
+  display: flex !important;
+}
+
+.only-desktop {
+  display: none !important;
+}
+
+@media #{$tablets-and-large} {
+  .only-mobile {
+    display: none !important;
+  }
+
+  .only-desktop {
+    display: flex !important;
+  }
+}

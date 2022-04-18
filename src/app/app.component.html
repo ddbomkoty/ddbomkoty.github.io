@@ -1,29 +1,36 @@
-<div class="logo" >
-  <img src="../assets/email.gif"/>
-  <label>DDBO rusia!</label>
+<app-welcome *ngIf="showWelcomeComponent"
+             [@enterAnimation]>
+</app-welcome>
+
+<div [ngClass]="{'hide-content': showWelcomeComponent}">
+  <div class="logo" >
+    <img src="../assets/email.gif"/>
+    <label>DDBO rusia!</label>
+  </div>
+  <nav mat-tab-nav-bar mat-align-tabs="center">
+    <a mat-tab-link
+       routerLink=""
+       routerLinkActive #rla="routerLinkActive"
+       [routerLinkActiveOptions]="{ exact: true }"
+       [active]="rla.isActive">
+      О нас
+    </a>
+    <a mat-tab-link
+       routerLink="you"
+       routerLinkActive #rla2="routerLinkActive"
+       [routerLinkActiveOptions]="{ exact: true }"
+       [active]="rla2.isActive">
+      О вас
+    </a>
+    <a mat-tab-link
+       routerLink="fire"
+       routerLinkActive #rla3="routerLinkActive"
+       [routerLinkActiveOptions]="{ exact: true }"
+       [active]="rla3.isActive">
+      Противогаз
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+  <img src="../assets/semya.jpeg"/>
 </div>
-<nav mat-tab-nav-bar mat-align-tabs="center">
-  <a mat-tab-link
-     routerLink=""
-     routerLinkActive #rla="routerLinkActive"
-     [routerLinkActiveOptions]="{ exact: true }"
-     [active]="rla.isActive">
-    О нас
-  </a>
-  <a mat-tab-link
-     routerLink="you"
-     routerLinkActive #rla2="routerLinkActive"
-     [routerLinkActiveOptions]="{ exact: true }"
-     [active]="rla2.isActive">
-    О вас
-  </a>
-  <a mat-tab-link
-     routerLink="fire"
-     routerLinkActive #rla3="routerLinkActive"
-     [routerLinkActiveOptions]="{ exact: true }"
-     [active]="rla3.isActive">
-    Противогаз
-  </a>
-</nav>
-<router-outlet></router-outlet>
-<img src="../assets/semya.jpeg"/>
+

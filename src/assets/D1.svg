@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Keyshape -->
+<svg xmlns="http://www.w3.org/2000/svg" id="svg1009" width="340" height="250" viewBox="0 0 340 250" preserveAspectRatio="xMidYMid meet" color-interpolation-filters="sRGB">
+    <style>
+@keyframes path935_fo { 0% { fill-opacity: 0; } 66.6667% { fill-opacity: 1; } 100% { fill-opacity: 1; } }
+@keyframes path935_s { 0% { stroke: #090909; } 100% { stroke: #090909; } }
+@keyframes path935_sw { 0% { stroke-width: 2px; } 100% { stroke-width: 2px; } }
+@keyframes path935_do { 0% { stroke-dashoffset: 1508.26px; } 33.3333% { stroke-dashoffset: 1508.26px; } 66.6667% { stroke-dashoffset: 700px; } 100% { stroke-dashoffset: 0px; } }
+    </style>
+    <defs id="defs1013"/>
+    <g id="g995" class="tp-name" opacity="1" fill="#333" transform="translate(61.4768,22.2377) translate(-91.7371,-22.2377)">
+        <g id="g993" transform="translate(91.7371,22.2377) translate(-91.7371,-22.2377)">
+            <g id="g945" transform="translate(22.2377,22.2377) translate(-22.2377,-22.2377)">
+                <g id="g943" class="name-imagesvg" transform="translate(22.2377,22.2377) translate(-22.2377,-22.2377)">
+                    <g id="g941" transform="translate(22.2377,22.2377) translate(-22.2377,-22.2377)">
+                        <rect id="rect933" fill="#333" fill-opacity="0" stroke-width="2" width="44.4755" height="44.4755" class="image-rect svg-elem-1" transform="translate(22.2377,22.2377) translate(-22.2377,-22.2377)"/>
+                        <svg id="svg939" width="44.4755" height="44.4755" class="image-svg-svg primary" overflow="visible" transform="translate(22.2377,22.2377) translate(-22.2377,-22.2377)">
+                            <svg id="svg937" viewBox="0 0 278.16 278.16" transform="translate(170,125) translate(-170,-125)">
+                                <path id="path935" d="M0,242.85L0,35.31C0,15.8088,15.8088,0,35.31,0L172.23,0C230.718,0.0386111,278.121,47.4425,278.16,105.93L278.16,172.23C278.121,230.718,230.718,278.121,172.23,278.16L172.23,278.16L35.31,278.16C25.9452,278.16,16.964,274.44,10.3421,267.818C3.72015,261.196,0,252.215,0,242.85ZM70.62,207.54L172.23,207.54C191.722,207.518,207.518,191.722,207.54,172.23L207.54,105.93C207.518,86.438,191.722,70.642,172.23,70.62L70.62,70.62Z" fill="#c8e107" opacity="0.8" class="svg-elem-2" stroke="#090909" stroke-linecap="round" stroke-dasharray="1508.26 1508.26" stroke-dashoffset="1508.26" fill-opacity="0" fill-rule="nonzero" stroke-width="2" transform="translate(139.08,139.08) translate(-139.08,-139.08)" style="animation: 1.5s linear both path935_fo, 1.5s linear both path935_s, 1.5s linear both path935_sw, 1.5s linear both path935_do;"/>
+                            </svg>
+                        </svg>
+                    </g>
+                </g>
+            </g>
+            <g id="g959" transform="translate(66.7132,22.2377) translate(-22.2377,-22.2377)">
+                <g id="g957" class="name-imagesvg" transform="translate(22.2377,22.2377) translate(-22.2377,-22.2377)">
+                    <g id="g955" transform="translate(22.2377,22.2377) translate(-22.2377,-22.2377)">
+                        <rect id="rect947" fill="#333" fill-opacity="0" stroke-width="2" width="44.4755" height="44.4755" class="image-rect svg-elem-3" transform="translate(22.2377,22.2377) translate(-22.2377,-22.2377)"/>
+                        <svg id="svg953" width="44.4755" height="44.4755" class="image-svg-svg primary" overflow="visible" transform="translate(22.2377,22.2377) translate(-22.2377,-22.2377)">
+                            <svg id="svg951" viewBox="0 0 278.16 278.16" transform="translate(170,125) translate(-170,-125)"/>
+                        </svg>
+                    </g>
+                </g>
+            </g>
+            <g id="g975" transform="translate(111.599,22.2377) translate(-22.6479,-22.2377)">
+                <g id="g973" class="name-imagesvg" transform="translate(22.6479,22.2377) translate(-22.6479,-22.2377)">
+                    <g id="g971" transform="translate(22.6479,22.2377) translate(-22.6479,-22.2377)">
+                        <rect id="rect961" fill="#333" fill-opacity="0" stroke-width="2" width="45.2957" height="44.4755" class="image-rect svg-elem-5" transform="translate(22.6479,22.2377) translate(-22.6479,-22.2377)"/>
+                        <svg id="svg969" width="45.2957" height="44.4755" class="image-svg-svg primary" overflow="visible" transform="translate(22.6479,22.2377) translate(-22.6479,-22.2377)">
+                            <svg id="svg967" viewBox="0 0 283.29 278.16" transform="translate(170,125) translate(-170,-125)"/>
+                        </svg>
+                    </g>
+                </g>
+            </g>
+            <g id="g991" transform="translate(158.86,22.2377) translate(-24.6137,-22.2377)">
+                <g id="g989" class="name-imagesvg" transform="translate(24.6137,22.2377) translate(-24.6137,-22.2377)">
+                    <g id="g987" transform="translate(24.6137,22.2377) translate(-24.6137,-22.2377)">
+                        <rect id="rect977" fill="#333" fill-opacity="0" stroke-width="2" width="49.2275" height="44.4755" class="image-rect svg-elem-8" transform="translate(24.6137,22.2377) translate(-24.6137,-22.2377)"/>
+                        <svg id="svg985" width="49.2275" height="44.4755" class="image-svg-svg primary" overflow="visible" transform="translate(24.6137,22.2377) translate(-24.6137,-22.2377)">
+                            <svg id="svg983" viewBox="0 0 307.88 278.16" transform="translate(170,125) translate(-170,-125)"/>
+                        </svg>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+    <g id="g1007" class="tp-slogan" fill="#333333" opacity="1" transform="translate(167.999,152.46) translate(-14.785,-4.076)">
+        <g id="g1005" transform="translate(14.785,4.076) translate(-14.785,-4.076)">
+            <g id="g1003" transform="translate(14.785,4.076) translate(-14.785,-4.076)"/>
+        </g>
+    </g>
+</svg>
