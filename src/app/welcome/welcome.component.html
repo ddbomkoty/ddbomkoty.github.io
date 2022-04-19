@@ -1,9 +1,37 @@
-<div class="welcome-overlay">
+<div class="all-container">
   <div [className]="showBack ? 'wallpaper show-background' : 'wallpaper'"></div>
-  <img class="chaika" [className]="showChaika ? 'chaika chaika-shown' : 'chaika'" src="../assets/email.gif"/>
-  <app-logo></app-logo>
-  <!--<img class="logo" src="../../assets/DDBO_animate1.svg">-->
 
+  <div class="welcome-overlay">
+    <img class="chaika" [ngClass]="{
+    'chaika-shown': showChaika,
+    'chaika-flipped': isChaikaFlipped,
+     'chaika-away-right': isChaikaAway}"
+         src="../assets/email.gif"
+         (transitionend)="onChaikaGone()"/>
+    <app-logo></app-logo>
+
+    <div [className]="showChaika ? 'navigate-container chaika-shown' : 'navigate-container'">
+      <button class="link-button"
+              mat-button
+              color="primary"
+              (click)="viewportScroller.scrollToAnchor('mission')">
+        Миссия
+      </button>
+
+      <button class="link-button" mat-button color="accent">
+        Команда
+      </button>
+    </div>
+  </div>
+
+  <div id="mission"
+       class="mission-container">
+    <div class="mission-text">
+      Национальный проект импортозамещения в рекламной индустрии несется полным ходом и ДДБО Русия тому яркое
+      подтверждение.
+      <br/>
+      <br/>
+      Уникальное агентство рождается прямо на ваших глазах.
+    </div>
+  </div>
 </div>
-
-

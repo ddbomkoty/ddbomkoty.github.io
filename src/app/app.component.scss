@@ -1,3 +1,5 @@
+@import '../share';
+
 .logo {
   position: absolute;
   top: 0;
@@ -10,8 +12,28 @@
   }
 }
 
-:host ::ng-deep .mat-tab-link {
-  height: 88px;
+:host ::ng-deep {
+  .mat-tab-link {
+     height: 88px;
+   }
+
+  .mat-typography {
+    font-size: 30px;
+  }
+
+  .mat-button {
+    font-size: 20px;
+    line-height: 50px !important;
+    border-radius: 10px;
+  }
+
+  @media #{$tablets-and-large} {
+
+    .mat-button {
+      font-size: 50px;
+      line-height: 130px !important;
+    }
+  }
 }
 
 .hide-content {

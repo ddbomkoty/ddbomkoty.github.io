@@ -2,13 +2,27 @@
 //html {
 //  background-color: red;
 //}
-html, body {
-  //height: 100vh;
-  //background-image: url("assets/bckgrnd.gif");
-  //background-repeat: repeat;
+html {
+  scroll-behavior: smooth;
+  color: #2b2c2e;
 }
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "Kosmos";
+  src: url("./assets/Kosmos.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Brick";
+  src: url("./assets/brick.otf") format("opentype");
+}
+
+body.mat-typography {
+  font-size: 30px;
+  line-height: 30px;
 }

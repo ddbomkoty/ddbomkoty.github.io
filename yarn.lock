@@ -4552,6 +4552,13 @@ neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+ngx-parallax-scroll@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-parallax-scroll/-/ngx-parallax-scroll-1.0.2.tgz#aab34a3896580152145b428f7be07fd5e803e4d1"
+  integrity sha512-oSOb2i6SZieSla49O1YLZdAZTZgPghPl6IIocP5fWSIbfoAXsw1zaRJwTZc2vqsSLd3PY/cOI8NEzgqsZNk3Xg==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-napi@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/nice-napi/-/nice-napi-1.0.2.tgz#dc0ab5a1eac20ce548802fc5686eaa6bc654927b"
