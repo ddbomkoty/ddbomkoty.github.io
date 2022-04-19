@@ -7,9 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from "@angular/material/tabs";
-import { YouComponent } from './you/you.component';
-import { AboutComponent } from "./about/about.component";
-import { FireComponent } from "./fire/fire.component";
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LogoComponent } from './logo/logo.component';
 import { ParallaxDirective } from './parallax.directive';
@@ -17,9 +14,6 @@ import { ParallaxDirective } from './parallax.directive';
 @NgModule({
   declarations: [
     AppComponent,
-    YouComponent,
-    AboutComponent,
-    FireComponent,
     WelcomeComponent,
     LogoComponent,
     ParallaxDirective

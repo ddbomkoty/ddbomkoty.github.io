@@ -17,7 +17,7 @@
               [appParallax]="-15"
               mat-button
               color="primary"
-              (click)="viewportScroller.scrollToAnchor('mission')">
+              (click)="scrollToElement(mission)">
         Миссия
       </button>
 
@@ -30,6 +30,7 @@
   </div>
 
   <div id="mission"
+       #mission
        class="mission-container">
     <div class="mission-text">
       Национальные проекты по импортозамещению в рекламной индустрии несутся полным ходом и ДДБО Русия тому яркое

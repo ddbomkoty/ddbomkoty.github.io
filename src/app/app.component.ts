@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { animate, style, transition, trigger } from "@angular/animations";
-import * as smoothscroll from "smoothscroll-polyfill";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger(
       'enterAnimation', [
@@ -24,12 +24,10 @@ import * as smoothscroll from "smoothscroll-polyfill";
 })
 export class AppComponent implements OnInit {
   title = 'ddbo';
-  showWelcomeComponent = true;
   activeLink = '';
 
   constructor(private router: Router) {
     this.activeLink = router.url.replace('/', '');
-    smoothscroll.polyfill();
   }
 
   ngOnInit(): void {
