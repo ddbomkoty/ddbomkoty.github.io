@@ -62,7 +62,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   scrollToElement(element: HTMLDivElement) {
-    const SCROLL_TIME_MS = 100;
+    const SCROLL_TIME_MS = 500;
     const initScrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
     const start = Date.now();
     const rect = element.getBoundingClientRect();
