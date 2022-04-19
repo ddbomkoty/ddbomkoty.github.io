@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { animate, style, transition, trigger } from "@angular/animations";
+import * as smoothscroll from "smoothscroll-polyfill";
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,7 @@ export class AppComponent implements OnInit {
 
   constructor(private router: Router) {
     this.activeLink = router.url.replace('/', '');
-    // debugger;
+    smoothscroll.polyfill();
   }
 
   ngOnInit(): void {

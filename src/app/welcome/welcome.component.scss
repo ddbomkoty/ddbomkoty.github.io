@@ -3,7 +3,7 @@
 .mission-container, .welcome-overlay {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
 }
@@ -46,7 +46,7 @@
 
 .chaika {
   position: fixed;
-  height: 35%;
+  height: 30%;
   left:0;
   right:0;
   margin-left:auto;
@@ -73,15 +73,14 @@
 .mission-text {
   width: 80%;
   margin: auto;
+  font-family: 'Brick';
 }
 
 @media #{$tablets-and-large} {
-  .chaika {
-    height: 30%;
-  }
-
   .mission-text {
     width: 600px;
+    font-size: 30px;
+    line-height: 30px;
   }
 }
 
