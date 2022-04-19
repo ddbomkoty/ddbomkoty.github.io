@@ -1,24 +1,29 @@
 <div class="all-container">
   <div [className]="showBack ? 'wallpaper show-background' : 'wallpaper'"></div>
 
-  <div class="welcome-overlay">
-    <img class="chaika" [ngClass]="{
+  <img class="chaika" [ngClass]="{
     'chaika-shown': showChaika,
     'chaika-flipped': isChaikaFlipped,
      'chaika-away-right': isChaikaAway}"
-         src="../assets/email.gif"
-         (transitionend)="onChaikaGone()"/>
+       src="../assets/email.gif"
+       (transitionend)="onChaikaGone()"/>
+
+  <div class="welcome-overlay"
+       [appParallax]="3">
     <app-logo></app-logo>
 
     <div [className]="showChaika ? 'navigate-container chaika-shown' : 'navigate-container'">
       <button class="link-button"
+              [appParallax]="-15"
               mat-button
               color="primary"
               (click)="viewportScroller.scrollToAnchor('mission')">
         Миссия
       </button>
 
-      <button class="link-button" mat-button color="accent">
+      <button class="link-button"
+              [appParallax]="-10"
+              mat-button color="accent" disabled>
         Команда
       </button>
     </div>

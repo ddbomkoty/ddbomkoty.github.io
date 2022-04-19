@@ -32,9 +32,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // setTimeout(() => {
-    //   this.showWelcomeComponent = false;
-    // }, 3000);
   }
 
 }

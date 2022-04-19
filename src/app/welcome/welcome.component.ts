@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ViewportScroller } from "@angular/common";
 
 @Component({
@@ -11,6 +11,7 @@ export class WelcomeComponent implements OnInit {
   showBack = false;
   isChaikaAway = false;
   isChaikaFlipped = false;
+  @ViewChild('welcome') welcom: ElementRef;
 
   constructor(public viewportScroller: ViewportScroller) { }
 

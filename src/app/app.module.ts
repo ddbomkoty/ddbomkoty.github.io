@@ -12,6 +12,7 @@ import { AboutComponent } from "./about/about.component";
 import { FireComponent } from "./fire/fire.component";
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LogoComponent } from './logo/logo.component';
+import { ParallaxDirective } from './parallax.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LogoComponent } from './logo/logo.component';
     AboutComponent,
     FireComponent,
     WelcomeComponent,
-    LogoComponent
+    LogoComponent,
+    ParallaxDirective
   ],
   imports: [
     BrowserModule,
