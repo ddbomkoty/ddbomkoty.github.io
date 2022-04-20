@@ -31,8 +31,8 @@ export class ParallaxDirective {
 
     const element = this.el.nativeElement;
     const rect = element.getBoundingClientRect();
-    const topShown = rect.top >= 0 && rect.top <= window.innerHeight;
-    const bottomShown = rect.bottom <= window.innerHeight + 200 && rect.bottom >= 0;
+    const topShown = rect.top >= 0 && rect.top <= window.innerHeight + 200;
+    const bottomShown = rect.bottom <= window.innerHeight && rect.bottom >= 0;
     const isTestDivScrolledIntoView = topShown || bottomShown;
 
     const spaceFromElementTopToWindowTop = rect.top;

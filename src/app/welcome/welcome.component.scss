@@ -4,6 +4,38 @@
 //  position: fixed;
 //}
 
+.chapter.manifest {
+  //background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #ff075b, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Safari 5.1 to 6.0 */
+  //background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet); /* For Opera 11.1 to 12.0 */
+  //background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet); /* For Firefox 3.6 to 15 */
+  //background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet); /* Standard syntax (must be last) */
+  font-weight: bolder;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: 40px;
+  line-height: 40px;
+  animation: blinker .3s ease-in-out infinite;
+}
+.chapter.manifest + .chapter.manifest {
+  margin-top: 0;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  //top: 30px;
+  //left: 0;
+  //right: 0;
+}
+
 .mission-container, .welcome-container, .team-container {
   display: flex;
   flex-direction: column;
@@ -70,6 +102,12 @@
   }
 }
 
+.margo {
+  > .person-text {
+    margin-top: 60px;
+  }
+}
+
 .chaika-flipped {
   transform: scale(-1, 1);
 }
@@ -109,22 +147,22 @@
   margin-top: 50px;
 }
 
+.person-container.julia {
+  margin-bottom: 0;
+}
+
 .person-container.margo {
   margin-bottom: 0;
 }
 
 div.person-container.tema {
-  margin-top: 0 !important;
+  margin-top: -150px !important;
   margin-bottom: 0;
 }
 
 .person-container.stepa {
-  margin-top: 0 !important;
+  //margin-top: -20px !important;
   margin-bottom: 200px;
-
-  .person-text {
-    margin-top: 0;
-  }
 }
 
 .audio-player {
@@ -146,5 +184,30 @@ div.person-container.tema {
     font-size: 30px;
     line-height: 30px;
   }
+
+  .person-container.margo {
+    > .person-text {
+        margin-top: 100px !important;
+      }
+  }
+
+  .person-container.julia {
+    margin-bottom: inherit;
+  }
+
+  .person-container.stepa {
+    margin-bottom: 0px;
+    margin-top: 150px !important;
+
+    .person-text {
+      margin-top: 140px;
+    }
+  }
+
+  //.person-container.stepa {
+  //  > .person-text {
+  //    margin-top: 140px !important;
+  //  }
+  //}
 }
 
