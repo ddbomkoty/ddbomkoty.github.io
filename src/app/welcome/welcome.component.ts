@@ -35,8 +35,7 @@ export class WelcomeComponent implements OnInit {
     title: 'Мы решили пойти по другому пути и внедрить осознанное потребление в виртуальный мир'
   }, {
     image: 'assets/portfolio/tabascov.jpg', // Support base64 image
-    title: 'Image title', //Optional: You can use this key if want to show image with title
-    alt: 'Image alt', //Optional: You can use this key if want to show image with alt,
+    title: 'А что будет, если Баскова скрестить с Табаско? 🤔🤔🤔', //Optional: You can use this key if want to show image with title
     class: 'tabascov'
   }, {
     video: 'https://youtu.be/i_tu9DFto7I', // Youtube url

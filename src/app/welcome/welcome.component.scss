@@ -8,6 +8,18 @@
 
 }
 
+.portfolio-title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+  margin-top: -120px;
+
+  > div {
+    margin: auto;
+    display: flex;
+  }
+}
+
 .chapter.manifest, .portfolio-title {
   //background: red; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, #ff075b, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Safari 5.1 to 6.0 */
@@ -268,6 +280,11 @@ div.person-container.tema {
     .person-text {
       margin-top: 140px;
     }
+  }
+
+  .portfolio-title {
+    margin-bottom: 0;
+    margin-top: -80px;
   }
 
   //.person-container.stepa {
