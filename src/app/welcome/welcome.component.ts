@@ -45,10 +45,10 @@ export class WelcomeComponent implements OnInit {
     image: 'assets/portfolio/dyh.jpg',
     title: 'Как же прекрасен тот факт, что в моей квартире остались вещи бывшей и я их не сжег. Благодаря им в моей голове родился инсайт.' // Optional: Show image with description text
   }, {
-    image: 'assets/portfolio/austr.png',
+    image: 'assets/portfolio/austr.jpg',
     title: 'Креатив на декабрьский бриф от фестиваля Young Glory, который вошел в «short list» среди студенческих работ' // Optional: Show image with description text
   }, {
-    image: 'assets/portfolio/sims.png',
+    image: 'assets/portfolio/sims.jpg',
   }];
 
   constructor(public viewportScroller: ViewportScroller, private cdr: ChangeDetectorRef) {
