@@ -63,6 +63,9 @@ MIT
 @angular/router
 MIT
 
+ng-image-fullscreen-view
+MIT
+
 rxjs
 Apache-2.0
                                Apache License
