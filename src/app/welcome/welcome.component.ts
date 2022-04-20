@@ -5,7 +5,8 @@ import {
   ElementRef,
   HostListener,
   OnInit,
-  ViewChild
+  ViewChild,
+  ViewEncapsulation
 } from '@angular/core';
 import { ViewportScroller } from "@angular/common";
 import { fromEvent } from "rxjs";
@@ -14,7 +15,8 @@ import { fromEvent } from "rxjs";
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class WelcomeComponent implements OnInit {
   showChaika = false;
@@ -26,7 +28,32 @@ export class WelcomeComponent implements OnInit {
   @ViewChild('audioPlayer') audioPlayer: ElementRef;
   @ViewChild('allContainer') allContainer: ElementRef;
 
-  constructor(public viewportScroller: ViewportScroller, private cdr: ChangeDetectorRef) { }
+  showFlag: boolean = false;
+  selectedImageIndex: number = -1;
+  portfolioImages: Array<any> = [{
+    image: 'assets/portfolio/dota.jpg',
+    title: 'Мы решили пойти по другому пути и внедрить осознанное потребление в виртуальный мир'
+  }, {
+    image: 'assets/portfolio/tabascov.jpg', // Support base64 image
+    title: 'Image title', //Optional: You can use this key if want to show image with title
+    alt: 'Image alt', //Optional: You can use this key if want to show image with alt,
+    class: 'tabascov'
+  }, {
+    video: 'https://youtu.be/i_tu9DFto7I', // Youtube url
+    title: 'реальная работа для российских компаний, производящих музыкальное оборудование и инструменты',
+    imageForVideo: 'assets/portfolio/you.png'
+  }, {
+    image: 'assets/portfolio/dyh.jpg',
+    title: 'Как же прекрасен тот факт, что в моей квартире остались вещи бывшей и я их не сжег. Благодаря им в моей голове родился инсайт.' // Optional: Show image with description text
+  }, {
+    image: 'assets/portfolio/austr.png',
+    title: 'Креатив на декабрьский бриф от фестиваля Young Glory, который вошел в «short list» среди студенческих работ' // Optional: Show image with description text
+  }, {
+    image: 'assets/portfolio/sims.png',
+  }];
+
+  constructor(public viewportScroller: ViewportScroller, private cdr: ChangeDetectorRef) {
+  }
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -53,6 +80,17 @@ export class WelcomeComponent implements OnInit {
     } else {
       this.isChaikaAway = false;
     }
+  }
+
+
+  showLightbox(index: number) {
+    this.selectedImageIndex = index;
+    this.showFlag = true;
+  }
+
+  closeEventHandler() {
+    this.showFlag = false;
+    this.selectedImageIndex = -1;
   }
 
   onChaikaGone() {
@@ -82,6 +120,7 @@ export class WelcomeComponent implements OnInit {
         }
       }, isFirstTime ? 50 : 0);
     }
+
     render();
   }
 

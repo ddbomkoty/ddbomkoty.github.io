@@ -13,6 +13,7 @@ export class ParallaxDirective {
 
   @Input('appParallax') factor: number;
   @Input('screenBefore') screenBefore?: number = 0;
+  @Input('rotateFactor') rotateFactor: number;
 
   constructor(private el: ElementRef,
               private renderer: Renderer2) {
@@ -46,6 +47,7 @@ export class ParallaxDirective {
 
 
     isTestDivScrolledIntoView && this.renderer.setStyle(this.el.nativeElement, 'top', `${(window.scrollY - (this.screenBefore || 0) * window.innerHeight) / this.factor}px`);
+    isTestDivScrolledIntoView && this.rotateFactor && this.renderer.setStyle(this.el.nativeElement, 'transform', `rotate(${(window.innerHeight - rect.top) / this.rotateFactor}deg)`);
     // isTestDivScrolledIntoView && this.renderer.setStyle(this.el.nativeElement, 'top', `${(spaceFromElementTopToWindowTop - spaceFromElementBottomToWindowBottom) / this.factor}px`);
     this.previousTime = currentTime;
   }

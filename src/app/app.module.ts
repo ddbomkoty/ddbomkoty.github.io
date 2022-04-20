@@ -10,6 +10,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LogoComponent } from './logo/logo.component';
 import { ParallaxDirective } from './parallax.directive';
+import { NgImageFullscreenViewModule } from "ng-image-fullscreen-view";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ParallaxDirective } from './parallax.directive';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatTabsModule,
-    MatButtonModule
+    MatButtonModule,
+    NgImageFullscreenViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

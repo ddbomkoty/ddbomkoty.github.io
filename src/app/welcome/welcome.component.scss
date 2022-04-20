@@ -4,7 +4,11 @@
 //  position: fixed;
 //}
 
-.chapter.manifest {
+:host ::ng-deep {
+
+}
+
+.chapter.manifest, .portfolio-title {
   //background: red; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, #ff075b, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Safari 5.1 to 6.0 */
   //background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet); /* For Opera 11.1 to 12.0 */
@@ -36,11 +40,15 @@
   //right: 0;
 }
 
-.mission-container, .welcome-container, .team-container {
+.mission-container, .welcome-container, .team-container, .portfolio-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   position: relative;
+}
+
+.portfolio-container {
+  //margin-top: -150px;
 }
 
 .welcome-container {
@@ -81,6 +89,12 @@
 .chaika, .navigate-container {
   opacity: 0;
   transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+}
+
+.link-button:last-child {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .chaika {
@@ -120,10 +134,45 @@
   font-family: Brick;
 }
 
-.mission-text, .person-container {
+.mission-text, .person-container, .image-gallery, .portfolio-container {
   width: 80%;
   margin: 0 auto 80px auto;
   font-family: 'Brick';
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.image-gallery > img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: width .3s ease-in-out;
+  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.32);
+
+  &:after {
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &.tabascov {
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+
+  &:hover {
+    cursor: pointer;
+    width: 110%;
+    z-index: 1;
+  }
+
+  &:after:hover {
+    opacity: 1;
+  }
 }
 
 .chapter + .chapter {
@@ -149,6 +198,11 @@
 
 .person-container.julia {
   margin-bottom: 0;
+  margin-top: -80px;
+
+  img {
+    transform: rotate(180deg);
+  }
 }
 
 .person-container.margo {
@@ -156,17 +210,19 @@
 }
 
 div.person-container.tema {
-  margin-top: -150px !important;
+  margin-top: -200px !important;
   margin-bottom: 0;
 }
 
 .person-container.stepa {
+  margin-top: 50px !important;
   //margin-top: -20px !important;
-  margin-bottom: 200px;
+  //margin-bottom: 200px;
 }
 
 .audio-player {
   visibility: hidden;
+  position: absolute;
 }
 
 .person-photo {
@@ -176,11 +232,12 @@ div.person-container.tema {
     margin-right: auto;
     width: 70%;
     height: auto;
+    object-fit: contain;
   }
 }
 
 @media #{$tablets-and-large} {
-  .mission-text, .person-container {
+  .mission-text, .person-container, .image-gallery {
     width: 600px;
     font-size: 30px;
     line-height: 30px;
@@ -192,13 +249,21 @@ div.person-container.tema {
       }
   }
 
+  .person-container.tema {
+    > .person-photo {
+      position: relative;
+      top: -50px;
+    }
+  }
+
   .person-container.julia {
     margin-bottom: inherit;
+    margin-top: 0;
   }
 
   .person-container.stepa {
     margin-bottom: 0px;
-    margin-top: 150px !important;
+    margin-top: 200px !important;
 
     .person-text {
       margin-top: 140px;

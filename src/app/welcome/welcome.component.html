@@ -8,19 +8,21 @@
          controls>
   </audio>
 
-  <img class="chaika" [ngClass]="{
+  <div class="chaika-loader">
+    <img class="chaika" [ngClass]="{
     'chaika-shown': showChaika,
     'chaika-flipped': isChaikaFlipped,
      'chaika-away-right': isChaikaAway}"
-       src="../assets/email.gif"
-       (transitionend)="onChaikaGone()"
-       (click)="onChaikaClick()"/>
+         src="../assets/email.gif"
+         (transitionend)="onChaikaGone()"
+         (click)="onChaikaClick()"/>
+  </div>
 
   <div class="welcome-container"
        [appParallax]="5">
     <app-logo></app-logo>
 
-    <div [className]="showChaika ? 'navigate-container chaika-shown' : 'navigate-container'">
+    <div [class]="showChaika ? 'navigate-container chaika-shown' : 'navigate-container'">
       <button class="link-button"
               [appParallax]="-15"
               mat-button
@@ -35,11 +37,16 @@
               (click)="scrollToElement(team)">
         Команда
       </button>
+
+      <button class="link-button"
+              mat-button
+              (click)="scrollToElement(portfolio)">
+        Портфолио
+      </button>
     </div>
   </div>
 
-  <div id="mission"
-       #mission
+  <div #mission
        class="mission-container">
     <div class="mission-text">
       <div class="chapter manifest">
@@ -62,7 +69,9 @@
       <div class="chapter"
            [appParallax]="-3"
            [screenBefore]="1">
-        Уникальное агентство рождается прямо на ваших глазах и не оставит ваши сердечки равнодушными.
+        компания основана в 2022 году. штат 4 человека.<br/>
+        <br/>
+        «не нефть и газ наше преимущество. Как видите, и нефть, и газ могут падать в цене. Наше преимущество - креативный подход, и мы его должны защитить...»
       </div>
     </div>
   </div>
@@ -72,7 +81,8 @@
       <div class="person-container julia">
         <div class="person-photo"
              [appParallax]="-7"
-             [screenBefore]="1">
+             [screenBefore]="1"
+             [rotateFactor]="-80">
           <img src="../../assets/team/julya.png">
         </div>
 
@@ -84,19 +94,20 @@
           <br/>
           основательница продакшена <a href="https://dinamika.media" target="_blank">dinamika.media</a><br/>
           <br/>
-          Режиссерка.<br/>
-          Кретиверка.<br/>
-          Стратегерка.<br/>
-          Любимая еда: овсянка.<br/>
-          Любимая книга: каштанка.<br/>
-          Место рождения: Мальорка.
+          Продюсерка. <br/>
+          Стратеджистка. <br/>
+          Кретиверка. <br/>
+          Режиссерка. <br/>
+          <br/>
+          Феминитивов амбассадорка.
         </div>
       </div>
 
       <div class="person-container margo">
         <div class="person-photo"
              [appParallax]="-7"
-             [screenBefore]="1">
+             [screenBefore]="1"
+             [rotateFactor]="-250">
           <img src="../../assets/team/margo.png">
         </div>
 
@@ -106,11 +117,10 @@
           Марго
           <br/>
           <br/>
-          Победительница рекламного фестиваля челябинские львицы.<br/>
-          Категория пивко.<br/>
-          Любит balenciaga и чипсы по скидке<br/>
+          победительница рекламного фестиваля челябинские тигрицы.<br/>
+          крадет идеи из рисунков трехлетней сестры.<br/>
           <br/>
-          Копирайтер.
+          неуправляющий креативный директор.
         </div>
       </div>
 
@@ -136,7 +146,8 @@
 
       <div class="person-container stepa"
            [appParallax]="-5"
-           [screenBefore]="3">
+           [screenBefore]="3"
+           [rotateFactor]="-320">
         <div class="person-photo">
           <img src="../../assets/team/stepa2.png">
         </div>
@@ -158,6 +169,35 @@
           Копирайтер.
         </div>
       </div>
+    </div>
+
+  </div>
+
+  <div class="portfolio-container">
+
+    <div #portfolio
+         class="portfolio-title"
+         [appParallax]="-6"
+         [screenBefore]="4"
+         [rotateFactor]="250">
+      &lt;&lt;&lt;Портфолио&gt;&gt;&gt;<br/>
+      &lt;&lt;&lt;Портфолио&gt;&gt;&gt;<br/>
+      &lt;&lt;&lt;Портфолио&gt;&gt;&gt;<br/>
+    </div>
+
+    <div class="image-gallery">
+      <img *ngFor="let image of portfolioImages; let i = index"
+           [src]="image.video ? image.imageForVideo : image.image"
+           [className]="image.class"
+           (click)="showLightbox(i)" />
+
+      <ng-image-fullscreen-view
+        [images]="portfolioImages"
+        [imageIndex]="selectedImageIndex"
+        [show]="showFlag"
+        [animationSpeed]="0.3"
+        (close)="closeEventHandler()">
+      </ng-image-fullscreen-view>
     </div>
 
   </div>
