@@ -40,7 +40,7 @@ export class WelcomeComponent implements OnInit {
   }, {
     video: 'https://youtu.be/i_tu9DFto7I', // Youtube url
     title: 'реальная работа для российских компаний, производящих музыкальное оборудование и инструменты',
-    imageForVideo: 'assets/portfolio/you.png'
+    imageForVideo: 'assets/portfolio/you.jpg'
   }, {
     image: 'assets/portfolio/dyh.jpg',
     title: 'Как же прекрасен тот факт, что в моей квартире остались вещи бывшей и я их не сжег. Благодаря им в моей голове родился инсайт.' // Optional: Show image with description text
