@@ -11,7 +11,7 @@
   position: relative;
 }
 
-.mission-container, .welcome-container {
+.welcome-container {
   height: 100vh;
 }
 
@@ -79,7 +79,7 @@
 
 .mission-text, .person-container {
   width: 80%;
-  margin: auto auto 0 auto;
+  margin: 0 auto 80px auto;
   font-family: 'Brick';
 }
 
@@ -102,6 +102,24 @@
 
 .person-container + .person-container {
   margin-top: 50px;
+}
+
+.person-container.margo {
+  margin-bottom: 0;
+}
+
+div.person-container.tema {
+  margin-top: 0 !important;
+  margin-bottom: 0;
+}
+
+.person-container.stepa {
+  margin-top: 0 !important;
+  margin-bottom: 200px;
+
+  .person-text {
+    margin-top: 0;
+  }
 }
 
 .person-photo {
