@@ -22,6 +22,7 @@ export class WelcomeComponent implements OnInit {
   isChaikaAway = false;
   isChaikaFlipped = false;
   @ViewChild('welcome') welcom: ElementRef;
+  @ViewChild('audioPlayer') audioPlayer: ElementRef;
   @ViewChild('allContainer') allContainer: ElementRef;
 
   constructor(public viewportScroller: ViewportScroller, private cdr: ChangeDetectorRef) { }

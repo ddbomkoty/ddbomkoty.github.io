@@ -1,12 +1,20 @@
 <div class="all-container">
   <div [className]="showBack ? 'wallpaper show-background' : 'wallpaper'"></div>
 
+  <audio #audioPlayer
+         class="audio-player"
+         type="audio/mp3"
+         src="../../assets/krylya.mp3"
+         controls>
+  </audio>
+
   <img class="chaika" [ngClass]="{
     'chaika-shown': showChaika,
     'chaika-flipped': isChaikaFlipped,
      'chaika-away-right': isChaikaAway}"
        src="../assets/email.gif"
-       (transitionend)="onChaikaGone()"/>
+       (transitionend)="onChaikaGone()"
+       (click)="audioPlayer.paused ? audioPlayer.play() : audioPlayer.pause()"/>
 
   <div class="welcome-container"
        [appParallax]="5">

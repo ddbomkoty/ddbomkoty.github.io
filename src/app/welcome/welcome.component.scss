@@ -59,10 +59,15 @@
   margin-left:auto;
   margin-right:auto;
   transition: right 1s ease-in-out, transform .5s;
+  z-index: 1;
 }
 
 .chaika-shown {
   opacity: 1;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .chaika-flipped {
@@ -120,6 +125,10 @@ div.person-container.tema {
   .person-text {
     margin-top: 0;
   }
+}
+
+.audio-player {
+  visibility: hidden;
 }
 
 .person-photo {
