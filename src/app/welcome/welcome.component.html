@@ -14,7 +14,7 @@
      'chaika-away-right': isChaikaAway}"
        src="../assets/email.gif"
        (transitionend)="onChaikaGone()"
-       (click)="audioPlayer.paused ? audioPlayer.play() : audioPlayer.pause()"/>
+       (click)="onChaikaClick()"/>
 
   <div class="welcome-container"
        [appParallax]="5">

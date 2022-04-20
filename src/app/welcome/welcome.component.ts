@@ -21,6 +21,7 @@ export class WelcomeComponent implements OnInit {
   showBack = false;
   isChaikaAway = false;
   isChaikaFlipped = false;
+  interval: number;
   @ViewChild('welcome') welcom: ElementRef;
   @ViewChild('audioPlayer') audioPlayer: ElementRef;
   @ViewChild('allContainer') allContainer: ElementRef;
@@ -83,5 +84,24 @@ export class WelcomeComponent implements OnInit {
     }
     render();
   }
+
+  onChaikaClick() {
+    this.audioPlayer.nativeElement.paused ? this.audioPlayer.nativeElement.play() : this.audioPlayer.nativeElement.pause();
+    // if (!this.audioPlayer.nativeElement.paused) {
+    //   this.interval = setInterval(() => {
+    //     this.isChaikaFlipped = !this.isChaikaFlipped;
+    //     debugger;
+    //     this.cdr.detectChanges();
+    //   }, 1000);
+    // } else {
+    //   this.stopChaikaFlip();
+    // }
+  }
+
+  // stopChaikaFlip() {
+  //   clearInterval(this.interval);
+  //   this.isChaikaFlipped = false;
+  //   this.cdr.detectChanges();
+  // }
 
 }
