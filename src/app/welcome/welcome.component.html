@@ -8,8 +8,8 @@
        src="../assets/email.gif"
        (transitionend)="onChaikaGone()"/>
 
-  <div class="welcome-overlay"
-       [appParallax]="3">
+  <div class="welcome-container"
+       [appParallax]="5">
     <app-logo></app-logo>
 
     <div [className]="showChaika ? 'navigate-container chaika-shown' : 'navigate-container'">
@@ -22,8 +22,9 @@
       </button>
 
       <button class="link-button"
-              [appParallax]="-10"
-              mat-button color="accent" disabled>
+              [appParallax]="-8"
+              mat-button color="accent"
+              (click)="scrollToElement(team)">
         Команда
       </button>
     </div>
@@ -33,11 +34,85 @@
        #mission
        class="mission-container">
     <div class="mission-text">
-      Национальные проекты по импортозамещению в рекламной индустрии несутся полным ходом и ДДБО Русия тому яркое
-      подтверждение.
-      <br/>
-      <br/>
-      Уникальное агентство рождается прямо на ваших глазах и не оставит ваши сердечки равнодушными.
+      <div class="chapter"
+           [appParallax]="-7">
+        Национальные проекты по импортозамещению в рекламной индустрии несутся полным ходом и ДДБО Русия тому яркое
+        подтверждение.
+      </div>
+
+      <div class="chapter"
+           [appParallax]="-4">
+        Уникальное агентство рождается прямо на ваших глазах и не оставит ваши сердечки равнодушными.
+      </div>
     </div>
+  </div>
+  <div #team
+       class="team-container">
+    <div>
+      <div class="person-container julia">
+        <div class="person-photo">
+          <img src="../../assets/team/julya.png">
+        </div>
+
+        <div class="person-text">
+          Юля
+          <br/>
+          <br/>
+          Продюсер своего мощнейшего продакшна.
+          <br/>
+          <br/>
+          Режиссерка, креативерка, стратегерка.
+        </div>
+      </div>
+
+      <div class="person-container margo">
+        <div class="person-photo">
+          <img src="../../assets/team/margo.png">
+        </div>
+
+        <div class="person-text">
+          Марго
+          <br/>
+          <br/>
+          Победительница рекламного фестиваля челябинские львицы.
+          <br/>
+          <br/>
+          Категория пивко. Копирайтер.
+        </div>
+      </div>
+
+      <div class="person-container margo">
+        <div class="person-photo">
+          <img src="../../assets/team/tema.png">
+        </div>
+
+        <div class="person-text">
+          Артем
+          <br/>
+          <br/>
+          Отставной ФСБшник. С ним шутки плохи.
+          <br/>
+          <br/>
+          Шорт лист Янг Глори на минуточку. Копирайтер.
+        </div>
+      </div>
+
+      <div class="person-container margo">
+        <div class="person-photo">
+          <img src="../../assets/team/stepa2.png">
+        </div>
+
+        <div class="person-text">
+          Степан
+          <br/>
+          <br/>
+          В целом всё.
+          <br/>
+          <br/>
+          Лауреат школьной олимпиады по трудам. Копирайтер.
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

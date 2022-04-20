@@ -4,15 +4,18 @@
 //  position: fixed;
 //}
 
-.mission-container, .welcome-overlay {
+.mission-container, .welcome-container, .team-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
   position: relative;
 }
 
-.welcome-overlay {
+.mission-container, .welcome-container {
+  height: 100vh;
+}
+
+.welcome-container {
   top: 0;
 
   > p {
@@ -74,14 +77,44 @@
   font-family: Brick;
 }
 
-.mission-text {
+.mission-text, .person-container {
   width: 80%;
   margin: auto;
   font-family: 'Brick';
 }
 
+.chapter + .chapter {
+  margin-top: 100px;
+}
+
+.person-container, .team-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.person-container:last-child {
+  margin-bottom: 100px;
+}
+
+.person-text {
+  margin-top: 30px;
+}
+
+.person-container + .person-container {
+  margin-top: 50px;
+}
+
+.person-photo {
+  display: flex;
+  > img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+}
+
 @media #{$tablets-and-large} {
-  .mission-text {
+  .mission-text, .person-container {
     width: 600px;
     font-size: 30px;
     line-height: 30px;
