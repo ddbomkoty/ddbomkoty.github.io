@@ -77,6 +77,10 @@
   //right: 0;
 }
 
+.mission-container {
+  margin-top: 70px;
+}
+
 .mission-container, .welcome-container, .team-container, .portfolio-container {
   display: flex;
   flex-direction: column;
@@ -257,10 +261,11 @@ div.portfolio-container {
 
 .person-container.margo {
   margin-bottom: 0;
+  margin-top: -50px;
 }
 
 div.person-container.tema {
-  margin-top: -200px !important;
+  margin-top: -220px !important;
   margin-bottom: 0;
 }
 
@@ -268,6 +273,13 @@ div.person-container.tema {
   margin-top: 50px !important;
   //margin-top: -20px !important;
   //margin-bottom: 200px;
+  .person-text {
+    margin-top: 70px;
+  }
+}
+
+.all-container > div.portfolio-container {
+  margin-top: -120px;
 }
 
 .audio-player {
@@ -288,7 +300,17 @@ div.person-container.tema {
   }
 }
 
+.team-anchor {
+  position: absolute;
+  top: -200px
+}
+
 @media #{$tablets-and-large} {
+  .team-anchor {
+    position: absolute;
+    top: -120px
+  }
+
   .mission-text, .person-container, .image-gallery {
     width: 600px;
     font-size: 30px;
