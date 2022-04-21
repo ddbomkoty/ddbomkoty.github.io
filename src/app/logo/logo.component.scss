@@ -22,7 +22,13 @@
 
 @media #{$tablets-and-large} {
   :host {
-    margin-top: 300px;
+    margin-top: 37vh;
     height: 150px;
+  }
+}
+
+@media #{$very-big-height} {
+  :host {
+    height: 200px;
   }
 }

@@ -334,3 +334,56 @@ div.person-container.tema {
   //}
 }
 
+@media #{$big-height} {
+  .person-container.stepa {
+    margin-top: 50px !important;
+  }
+
+  div.image-gallery {
+    margin-top: 20vh;
+  }
+
+  .navigate-container {
+    margin-top: 50px;
+  }
+}
+
+  @media #{$very-big-height} {
+      .person-container.stepa {
+    margin-top: -150px !important;
+
+    .person-text {
+      margin-top: 0;
+    }
+  }
+
+  div.image-gallery {
+    margin-top: 20vh;
+  }
+
+  div.portfolio-container {
+    margin-top: 100px;
+  }
+
+  div.image-gallery {
+    margin-top: 30vh;
+  }
+
+  .navigate-container {
+    margin-top: 100px;
+  }
+}
+
+@media #{$small-height} {
+  .mission-container {
+    margin-top: 70px;
+  }
+
+  div.portfolio-container {
+    margin-top: -180px;
+  }
+
+  div.image-gallery {
+    margin-top: -120px;
+  }
+}

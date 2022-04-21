@@ -1,5 +1,11 @@
 $medium-screen: 992px;
+$big-screen-height: 1100px;
+$small-screen-height: 700px;
+$very-big-screen-height: 1400px;
 $tablets-and-large: "only screen and (min-device-width : #{$medium-screen})";
+$big-height: "only screen and (min-height: #{$big-screen-height})";
+$small-height: "only screen and (max-height: #{$small-screen-height})";
+$very-big-height: "only screen and (min-height: #{$very-big-screen-height})";
 
 .only-mobile {
   display: flex !important;
