@@ -20,20 +20,24 @@
   }
 }
 
-.chapter.manifest {
+.chapter.manifest, .portfolio-title-text {
   //background: red; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, #ff075b, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #ff075b, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #ff075b, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #ff075b, #6ccaff, #ff50df, #6ccaff, #b509b8); /* Standard syntax (must be last) */
+  background: -webkit-linear-gradient(left, #ff00d8, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #ff00d8, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #ff00d8, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #ff00d8, #6ccaff, #ff50df, #6ccaff, #b509b8); /* Standard syntax (must be last) */
   font-weight: bolder;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
   font-size: 40px;
   line-height: 40px;
+}
+
+.chapter.manifest {
   animation: blinker .3s ease-in-out infinite;
 }
+
 .chapter.manifest + .chapter.manifest {
   margin-top: 0;
 }
