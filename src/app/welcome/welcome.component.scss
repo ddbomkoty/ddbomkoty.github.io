@@ -171,10 +171,19 @@ div.portfolio-container {
   font-family: Brick;
 }
 
-.mission-text, .person-container, .image-gallery, .portfolio-container {
+.mission-text, .person-container, .portfolio-container {
   width: 80%;
   margin: 0 auto 80px auto;
   font-family: 'Brick';
+}
+
+div.portfolio-container {
+  width: 90%;
+}
+
+.image-gallery {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .image-gallery {
