@@ -20,7 +20,7 @@
   }
 }
 
-.chapter.manifest, .portfolio-title {
+.chapter.manifest {
   //background: red; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, #ff075b, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(right, #ff075b, #6ccaff, #ff50df, #6ccaff, #b509b8); /* For Opera 11.1 to 12.0 */
@@ -44,6 +44,16 @@
   }
 }
 
+@keyframes opacityAnimate {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -59,8 +69,8 @@
   position: relative;
 }
 
-.portfolio-container {
-  //margin-top: -150px;
+div.portfolio-container {
+  margin-top: -80px;
 }
 
 .welcome-container {
@@ -91,10 +101,10 @@
   position: fixed;
   z-index: -1;
   opacity: 0;
-  transition: opacity 0.4s ease-in;
 
   &.show-background {
     opacity: 1;
+    animation: opacityAnimate .4s ease-in-out 1;
   }
 }
 
