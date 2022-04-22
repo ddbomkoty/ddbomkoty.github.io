@@ -228,12 +228,6 @@ div.portfolio-container {
     grid-column-start: 2;
   }
 
-  &:hover {
-    cursor: pointer;
-    width: 110%;
-    z-index: 1;
-  }
-
   &:after:hover {
     opacity: 1;
   }
@@ -418,6 +412,14 @@ div.footer-subline {
     width: 600px;
     font-size: 30px;
     line-height: 30px;
+  }
+
+  .image-gallery > img {
+    &:hover {
+      cursor: pointer;
+      width: 110%;
+      z-index: 1;
+    }
   }
 
   .person-container.margo {
