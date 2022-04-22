@@ -1,5 +1,14 @@
-<div class="all-container">
+<div #top class="all-container">
   <div [className]="showBack ? 'wallpaper show-background' : 'wallpaper'"></div>
+
+  <button class="go-back"
+          [ngClass]="{'show-back': showScrollToTopButton}"
+          mat-fab
+          color="accent"
+          aria-label="back"
+          (click)="scrollToElement(top)">
+    <mat-icon>arrow_upward</mat-icon>
+  </button>
 
   <audio #audioPlayer
          class="audio-player"
@@ -191,20 +200,38 @@
       </div>
     </div>
 
-    <div class="image-gallery">
-      <img *ngFor="let image of portfolioImages; let i = index"
-           [src]="image.video ? image.imageForVideo : image.image"
-           [className]="image.class"
-           (click)="showLightbox(i)" />
+    <div style="overflow-y: visible" (mouseover)="onGalleryHover($event)">
+      <div class="image-gallery">
+        <img *ngFor="let image of portfolioImages; let i = index"
+             [src]="image.video ? image.imageForVideo : image.image"
+             [className]="image.class"
+             (click)="showLightbox(i)" />
 
-      <ng-image-fullscreen-view
-        [images]="portfolioImages"
-        [imageIndex]="selectedImageIndex"
-        [show]="showFlag"
-        [animationSpeed]="0.3"
-        (close)="closeEventHandler()">
-      </ng-image-fullscreen-view>
+        <ng-image-fullscreen-view
+          [images]="portfolioImages"
+          [imageIndex]="selectedImageIndex"
+          [show]="showFlag"
+          [animationSpeed]="0.3"
+          (close)="closeEventHandler()">
+        </ng-image-fullscreen-view>
+      </div>
     </div>
 
+
+  </div>
+
+  <div class="footer">
+    <img class="footer-tema1" src="../../assets/team/tema2.png">
+    <div class="footer-info">
+      <div class="footer-line">Contact us:</div>
+      <a href="https://invite.viber.com/?g2=AQAFlWOZrZGeaU8R6w8%2FcrDjnEZmHI6eVklzT5foKnTqrK%2BYpG%2BNev2Fv%2BBWXSuU"
+         target="_blank">
+        <img class="social-icon" src="../../assets/viber.png">
+      </a>
+      <div class="footer-subline">
+        © 2022 DDBO Rusia Inc. &nbsp;&nbsp; Inspired by <a href="http://repeshok.narod.ru/" target="_blank">http://repeshok.narod.ru/</a>
+      </div>
+    </div>
+    <img class="footer-tema2" src="../../assets/team/tema2.png">
   </div>
 </div>

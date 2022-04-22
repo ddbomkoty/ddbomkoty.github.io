@@ -35,18 +35,18 @@
   animation: blinker .3s ease-in-out infinite;
 }
 
-.portfolio-title-text  {
-  color: #ff00d8;
+.portfolio-title-text {
+  color: #FF4080;
   font-size: 40px;
   line-height: 40px;
 }
 
-.portfolio-title-text:nth-child(2){
-  color: rgba(255, 0, 215, 0.59);
+.portfolio-title-text:nth-child(2) {
+  color: rgba(255, 64, 128, 0.65);
 }
 
-.portfolio-title-text:nth-child(3){
-  color: rgba(255, 80, 223, 0.31);
+.portfolio-title-text:nth-child(3) {
+  color: rgba(255, 64, 128, 0.31);
 }
 
 .chapter.manifest + .chapter.manifest {
@@ -127,6 +127,20 @@ div.portfolio-container {
   }
 }
 
+.go-back {
+  position: fixed !important;
+  right: 20px;
+  top: -80px;
+  transition: top .4s ease-in-out, transform .4s linear !important;
+  transform: rotate(180deg) !important;
+}
+
+.show-back {
+  top: 20px;
+  z-index: 100;
+  transform: rotate(0deg) !important;
+}
+
 .chaika, .navigate-container {
   opacity: 0;
   transition: opacity 0.4s;
@@ -141,12 +155,12 @@ div.portfolio-container {
 .chaika {
   position: fixed;
   height: 30%;
-  left:0;
-  right:0;
-  margin-left:auto;
-  margin-right:auto;
-  transition: right 1s ease-in-out, transform .5s;
-  z-index: 1;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  transition: right 1s ease-in-out, transform .5s, height .2s ease-in-out;
+  z-index: 9999;
 }
 
 .chaika-shown {
@@ -171,7 +185,7 @@ div.portfolio-container {
   right: -200vw;
 }
 
-.link-button {
+.link-button, .footer {
   font-family: Brick;
 }
 
@@ -201,17 +215,17 @@ div.portfolio-container {
   height: auto;
   object-fit: contain;
   transition: width .3s ease-in-out;
-  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.32);
-
-  &:after {
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.6);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.32);
 
   &.tabascov {
     grid-row-start: 1;
     grid-row-end: 4;
+  }
+
+  &.durex {
+    grid-row-start: 3;
+    grid-row-end: 6;
+    grid-column-start: 2;
   }
 
   &:hover {
@@ -305,7 +319,96 @@ div.person-container.tema {
   top: -200px
 }
 
+.footer {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.footer-tema1 {
+  float: left;
+  transform: scale(-1, 1);
+}
+
+.footer-tema1, .footer-tema2 {
+  height: 100%
+}
+
+.footer-tema2 {
+  float: right;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > a {
+    opacity: 0.7;
+    transition: opacity .3s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.footer-line {
+  margin-bottom: 10px;
+}
+
+div.footer-subline {
+  font-size: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.social-icon {
+  height: 50px;
+}
+
 @media #{$tablets-and-large} {
+  .go-back {
+    right: 100px;
+    top: -80px;
+  }
+
+  .show-back {
+    top: 60px;
+  }
+
+  div.footer-subline {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+
+  .footer-info {
+    > div {
+      margin: 10px;
+    }
+
+    > a {
+      margin: 10px 0;
+    }
+
+  }
+
+  .footer {
+    height: 30vh;
+  }
+
+  .social-icon {
+    height: 10vh;
+  }
+
+  .chaika-loader > .chaika-shown {
+    &:hover {
+      height: 37%;
+    }
+  }
+
   .team-anchor {
     position: absolute;
     top: -120px
@@ -319,8 +422,8 @@ div.person-container.tema {
 
   .person-container.margo {
     > .person-text {
-        margin-top: 100px !important;
-      }
+      margin-top: 100px !important;
+    }
   }
 
   .person-container.tema {
@@ -370,8 +473,8 @@ div.person-container.tema {
   }
 }
 
-  @media #{$very-big-height} {
-      .person-container.stepa {
+@media #{$very-big-height} {
+  .person-container.stepa {
     margin-top: -150px !important;
 
     .person-text {

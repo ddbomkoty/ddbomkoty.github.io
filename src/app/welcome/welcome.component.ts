@@ -21,32 +21,40 @@ import { fromEvent } from "rxjs";
 export class WelcomeComponent implements OnInit {
   showChaika = false;
   showBack = false;
+  showScrollToTopButton = false;
   isChaikaAway = false;
   isChaikaFlipped = false;
   interval: number;
-  @ViewChild('welcome') welcom: ElementRef;
+  maxGalleryHeight: number;
   @ViewChild('audioPlayer') audioPlayer: ElementRef;
-  @ViewChild('allContainer') allContainer: ElementRef;
 
   showFlag: boolean = false;
   selectedImageIndex: number = -1;
   portfolioImages: Array<any> = [{
-    image: 'assets/portfolio/dota.jpg',
-    title: 'Мы решили пойти по другому пути и внедрить осознанное потребление в виртуальный мир'
+    image: 'assets/portfolio/dyh.jpg',
+    title: 'Как прекрасен тот факт, что в моей квартире остались вещи бывшей и я их не сжег. Благодаря им у меня родился инсайт.'
   }, {
-    image: 'assets/portfolio/tabascov.jpg', // Support base64 image
-    title: 'А что будет, если Баскова скрестить с Табаско? 🤔🤔🤔', //Optional: You can use this key if want to show image with title
+    image: 'assets/portfolio/tabascov.jpg',
+    title: 'А что будет, если Баскова скрестить с Табаско? 🤔🤔🤔.',
     class: 'tabascov'
   }, {
-    video: 'https://youtu.be/i_tu9DFto7I', // Youtube url
-    title: 'реальная работа для российских компаний, производящих музыкальное оборудование и инструменты',
+    image: 'assets/portfolio/dota.jpg',
+    title: 'Мы решили пойти по другому пути и внедрить осознанное потребление в виртуальный мир.'
+  }, {
+    image: 'assets/portfolio/durex.jpg',
+    title: 'Имиджевый принт для кондомов дюрекс.',
+    class: 'durex'
+  }, {
+    imageForVideo: 'assets/portfolio/booster.jpg',
+    video: 'https://youtu.be/17L8vYwvZ24',
+    title: 'Пример коммуникации. Коллабы Второго дыхания и стримера Booster\`а для кейса c DOTA2.'
+  }, {
+    video: 'https://youtu.be/i_tu9DFto7I',
+    title: 'реальная работа для российских компаний, производящих музыкальное оборудование и инструменты.',
     imageForVideo: 'assets/portfolio/you.jpg'
   }, {
-    image: 'assets/portfolio/dyh.jpg',
-    title: 'Как же прекрасен тот факт, что в моей квартире остались вещи бывшей и я их не сжег. Благодаря им в моей голове родился инсайт.' // Optional: Show image with description text
-  }, {
     image: 'assets/portfolio/austr.jpg',
-    title: 'Креатив на декабрьский бриф от фестиваля Young Glory, который вошел в «short list» среди студенческих работ' // Optional: Show image with description text
+    title: 'Креатив на декабрьский бриф от фестиваля Young Glory, который вошел в «short list» среди студенческих работ'
   }, {
     image: 'assets/portfolio/sims.jpg',
   }];
@@ -63,13 +71,6 @@ export class WelcomeComponent implements OnInit {
       this.showBack = true;
       this.cdr.detectChanges();
     }, 2000);
-
-    // fromEvent(document, 'scroll')
-    //   .subscribe((event: Event) => {
-    //     event.stopPropagation();
-    //     event.preventDefault();
-    //     debugger;
-    //   });
   }
 
   @HostListener('window:scroll', ['$event']) // for window scroll events
@@ -78,6 +79,12 @@ export class WelcomeComponent implements OnInit {
       this.isChaikaAway = true;
     } else {
       this.isChaikaAway = false;
+    }
+
+    if (window.scrollY > 700) {
+      this.showScrollToTopButton = true;
+    } else {
+      this.showScrollToTopButton = false;
     }
   }
 
@@ -125,21 +132,16 @@ export class WelcomeComponent implements OnInit {
 
   onChaikaClick() {
     this.audioPlayer.nativeElement.paused ? this.audioPlayer.nativeElement.play() : this.audioPlayer.nativeElement.pause();
-    // if (!this.audioPlayer.nativeElement.paused) {
-    //   this.interval = setInterval(() => {
-    //     this.isChaikaFlipped = !this.isChaikaFlipped;
-    //     debugger;
-    //     this.cdr.detectChanges();
-    //   }, 1000);
-    // } else {
-    //   this.stopChaikaFlip();
-    // }
   }
 
-  // stopChaikaFlip() {
-  //   clearInterval(this.interval);
-  //   this.isChaikaFlipped = false;
-  //   this.cdr.detectChanges();
-  // }
-
+  onGalleryHover(event: MouseEvent) {
+    if (this.maxGalleryHeight) {
+      return;
+    }
+    // debugger;
+    // @ts-ignore
+    const a = event.currentTarget.getBoundingClientRect();
+    (event.currentTarget as HTMLDivElement).style.maxHeight = a.height + 'px';
+    // debugger;
+  }
 }
