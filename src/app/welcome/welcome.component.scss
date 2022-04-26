@@ -359,8 +359,16 @@ div.footer-subline {
   text-align: center;
 }
 
+.contacts-container {
+  display: flex;
+
+  a + a {
+    margin-left: 10px;
+  }
+}
+
 .social-icon {
-  height: 50px;
+  height: 40px;
 }
 
 @media #{$tablets-and-large} {
@@ -395,6 +403,18 @@ div.footer-subline {
 
   .social-icon {
     height: 10vh;
+    opacity: 0.7;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .contacts-container {
+    a + a {
+      margin-left: 20px;
+    }
   }
 
   .chaika-loader > .chaika-shown {
