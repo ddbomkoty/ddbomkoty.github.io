@@ -24,10 +24,11 @@ import { animate, style, transition, trigger } from "@angular/animations";
 })
 export class AppComponent implements OnInit {
   title = 'ddbo';
-  activeLink = '';
+  // activeLink = '';
 
   constructor(private router: Router) {
-    this.activeLink = router.url.replace('/', '');
+    // debugger;
+    // this.activeLink = router.url.replace('/', '');
   }
 
   ngOnInit(): void {

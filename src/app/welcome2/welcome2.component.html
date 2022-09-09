@@ -1,0 +1,237 @@
+<div #top class="all-container">
+  <div [className]="showBack ? 'wallpaper show-background' : 'wallpaper'"></div>
+
+  <button class="go-back"
+          [ngClass]="{'show-back': showScrollToTopButton}"
+          mat-fab
+          color="accent"
+          aria-label="back"
+          (click)="scrollToElement(top)">
+    <mat-icon>arrow_upward</mat-icon>
+  </button>
+
+  <audio #audioPlayer
+         class="audio-player"
+         type="audio/mp3"
+         src="../../assets/krylya.mp3"
+         controls>
+  </audio>
+
+  <div class="chaika-loader">
+    <img class="chaika" [ngClass]="{
+    'chaika-shown': showChaika,
+    'chaika-flipped': isChaikaFlipped,
+     'chaika-away-right': isChaikaAway}"
+         src="../assets/email.gif"
+         (transitionend)="onChaikaGone()"
+         (click)="onChaikaClick()"/>
+  </div>
+
+  <div class="welcome-container"
+       [appParallax]="5">
+    <app-logo></app-logo>
+
+    <div [class]="showChaika ? 'navigate-container chaika-shown' : 'navigate-container'">
+      <!--<button class="link-button"-->
+      <!--[appParallax]="-15"-->
+      <!--mat-button-->
+      <!--color="primary"-->
+      <!--(click)="scrollToElement(mission)">-->
+      <!--Миссия!!!!-->
+      <!--</button>-->
+
+      <button class="link-button"
+              [appParallax]="-15"
+              mat-button
+              color="primary"
+              (click)="scrollToElement(team)">
+        Обо мне
+      </button>
+
+      <button class="link-button"
+              [appParallax]="-8"
+              mat-button color="accent"
+              (click)="scrollToElement(portfolio)">
+        Портфолио
+      </button>
+
+      <button class="link-button"
+              mat-button
+              (click)="scrollToElement(ps)">
+        P.S.
+      </button>
+    </div>
+  </div>
+
+  <!--<div #mission-->
+  <!--class="mission-container">-->
+  <!--<div class="mission-text">-->
+  <!--<div class="chapter manifest">-->
+  <!--КРеатив ИЛИ СМЕРТЬ!!!-->
+  <!--</div>-->
+  <!--<div class="chapter manifest">-->
+  <!--КРеатив ИЛИ СМЕРТЬ!!!-->
+  <!--</div>-->
+  <!--<div class="chapter manifest">-->
+  <!--КРеатив ИЛИ СМЕРТЬ!!!-->
+  <!--</div>-->
+
+  <!--<div class="chapter"-->
+  <!--[appParallax]="-7"-->
+  <!--[screenBefore]="1">-->
+  <!--Национальные проекты по импортозамещению в рекламной индустрии развиваются полным ходом и ДДБО Русия тому яркое-->
+  <!--подтверждение.-->
+  <!--</div>-->
+
+  <!--<div class="chapter"-->
+  <!--[appParallax]="-3"-->
+  <!--[screenBefore]="1">-->
+  <!--компания основана в 2022 году. штат 4 человека.<br/>-->
+  <!--<br/>-->
+  <!--«не нефть и газ наше преимущество. Как видите, и нефть, и газ могут падать в цене. Наше преимущество - креативный подход, и мы его должны защитить...»-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <div class="team-container">
+    <div #team class="team-anchor"></div>
+    <div>
+      <div class="person-container stepa">
+        <div class="person-photo"
+             [appParallax]="-4"
+             [screenBefore]="1"
+             [rotateFactor]="-180">
+          <img src="../../assets/team/stepa2.png">
+        </div>
+
+        <div class="person-text"
+             [appParallax]="-7"
+             [screenBefore]="1"
+             [rotateFactor]="250">
+          Привет, я Степан.
+          <br/>
+          <br/>
+          Отучился в вордшопе.<br/>
+          сезон 2021 - 2022.<br/>
+          Факультете креатива.<br/>
+          Живу в Питере.<br/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-container">
+    <div #portfolio
+         class="portfolio-title"
+         [appParallax]="-10"
+         [screenBefore]="3"
+         [rotateFactor]="-250">
+      <div class="portfolio-title-text">
+        Моё портфолио
+      </div>
+      <div class="portfolio-title-text">
+        Ну как моё, тут много от
+      </div>
+      <div class="portfolio-title-text">
+        Нашей команды ББДО
+      </div>
+    </div>
+
+    <div style="overflow-y: visible" (mouseover)="onGalleryHover($event)">
+      <div class="image-gallery">
+        <img *ngFor="let image of portfolioImages; let i = index"
+             [src]="image.video ? image.imageForVideo : image.image"
+             [className]="image.class"
+             (click)="showLightbox(i)"/>
+
+        <ng-image-fullscreen-view
+          [images]="portfolioImages"
+          [imageIndex]="selectedImageIndex"
+          [show]="showFlag"
+          [animationSpeed]="0.3"
+          (close)="closeEventHandler()">
+        </ng-image-fullscreen-view>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="else">
+    <div #else
+         class="portfolio-title"
+         [appParallax]="-10"
+         [screenBefore]="3"
+         [rotateFactor]="-250">
+      Но вообще это не всё.<br/>
+      У меня есть несколько музыкальных проектов:<br/><br/>
+      <a href="https://music.yandex.ru/artist/13395511" target="_blank">УМЛАУТ<span class="details"> (тут Петроградка самая крутая)</span></a>
+      <a href="https://music.yandex.ru/artist/10878834" target="_blank">Express Russe<span class="details"> (NEW ALBUM!)</span></a>
+      <a href="https://music.yandex.ru/artist/6290217" target="_blank">STИPAN project</a>
+      <a href="https://soundcloud.com/druzya-tomofeya" target="_blank">Друзья Тимофея</a>
+    </div>
+  </div>
+
+  <div class="portfolio-container">
+    <div class="portfolio-title"
+         [appParallax]="-8"
+         [screenBefore]="3"
+         [rotateFactor]="250">
+      <div class="portfolio-title-text">
+        Ну и снимаю еще видосы.
+      </div>
+      <div class="portfolio-title-text">
+        Например такие:
+      </div>
+    </div>
+
+    <div style="overflow-y: visible" (mouseover)="onGalleryHover($event)">
+      <div class="image-gallery">
+        <img *ngFor="let image of myVideos; let i = index"
+             [src]="image.video ? image.imageForVideo : image.image"
+             [className]="image.class"
+             (click)="showLightbox2(i)"/>
+
+        <ng-image-fullscreen-view
+          [images]="myVideos"
+          [imageIndex]="selectedImageIndex2"
+          [show]="showFlag2"
+          [animationSpeed]="0.3"
+          (close)="closeEventHandler2()">
+        </ng-image-fullscreen-view>
+      </div>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div #ps
+         class="portfolio-title"
+         [appParallax]="-7"
+         [screenBefore]="4"
+         [rotateFactor]="250">
+      Кстати в вордшопе еще учился на режиссуре.<br/>
+      Люблю мотоциклы и бокс.<br/>
+      Ну и музыку, но это наверное и так ясно.<br/><br/>
+      А вообще я лет 9 проработал в IT.<br/>
+      В основном веб разработчиком.<br/>
+      Сейчас типа в отпуске...<br/>
+    </div>
+  </div>
+
+  <div class="footer">
+    <img class="footer-tema1" src="../../assets/team/tema2.png">
+    <div class="footer-info">
+      <div class="footer-line">Contact me:</div>
+
+      <div class="contacts-container">
+        <a href="https://t.me/stepan_sichkar"
+           target="_blank">
+          <img class="social-icon" src="../../assets/tg.png">
+        </a>
+      </div>
+
+      <div class="footer-subline">
+        © 2022 DDBO Rusia Inc. &nbsp;&nbsp; Inspired by <a href="http://repeshok.narod.ru/" target="_blank">http://repeshok.narod.ru/</a>
+      </div>
+    </div>
+    <img class="footer-tema2" src="../../assets/team/tema2.png">
+  </div>
+</div>

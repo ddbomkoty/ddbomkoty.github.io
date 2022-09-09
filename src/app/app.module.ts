@@ -9,11 +9,13 @@ import { LogoComponent } from './logo/logo.component';
 import { ParallaxDirective } from './parallax.directive';
 import { NgImageFullscreenViewModule } from "ng-image-fullscreen-view";
 import { MatIconModule } from "@angular/material/icon";
+import { Welcome2Component } from "./welcome2/welcome2.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
+    Welcome2Component,
     LogoComponent,
     ParallaxDirective
   ],
