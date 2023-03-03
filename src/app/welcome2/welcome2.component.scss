@@ -207,19 +207,43 @@ div.portfolio-container {
   width: 100%;
   height: auto;
   object-fit: contain;
-  transition: width .3s ease-in-out;
+  transition: width .2s ease-in-out;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.32);
 
   &.tabascov {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+  }
+
+  &.gil {
     grid-row-start: 2;
     grid-row-end: 4;
     grid-column-start: 1;
   }
 
   &.volk {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+  }
+
+  &.alina {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+  }
+
+  &.umlaut {
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 2;
+  }
+
+  &.doj {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
   }
 
   &:after:hover {

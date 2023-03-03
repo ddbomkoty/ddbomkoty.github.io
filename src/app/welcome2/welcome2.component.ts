@@ -39,11 +39,6 @@ export class Welcome2Component implements OnInit {
     title: 'Дипломный кейс для теле2.',
     imageForVideo: 'assets/portfolio/tele3.jpg'
   }, {
-    imageForVideo: 'assets/portfolio/volk3.jpg',
-    video: 'https://www.youtube.com/watch?v=a6d8EOc_LQE',
-    title: 'Дипломный кейс для бренда одежды Волчок.',
-    class: 'volk'
-  }, {
     image: 'assets/portfolio/tabascov.jpg',
     title: 'А что будет, если Баскова скрестить с Табаско? 🤔🤔🤔.',
     class: 'tabascov'
@@ -51,16 +46,32 @@ export class Welcome2Component implements OnInit {
     image: 'assets/portfolio/gil.jpg',
     title: 'Текстовый принт для Gillette.',
     class: 'gil'
+  }, {
+    imageForVideo: 'assets/portfolio/volk3.jpg',
+    video: 'https://www.youtube.com/watch?v=a6d8EOc_LQE',
+    title: 'Дипломный кейс для бренда одежды Волчок.',
+    class: 'volk'
   }];
 
   myVideos: Array<any> = [{
-    video: 'https://www.youtube.com/watch?v=ALWIJkRXdEU',
-    title: 'Видео для вейк-сёрф станции в спб.',
-    imageForVideo: 'assets/portfolio/wake.jpg'
+    video: 'https://www.youtube.com/embed/5E1_lpRtUkU',
+    title: 'Видео бренда дождевиков Дождит.',
+    imageForVideo: 'assets/rej/doj.jpg',
+    class: 'doj'
   }, {
     imageForVideo: 'assets/portfolio/kung.jpg',
-    video: 'https://www.youtube.com/watch?v=2vRRgi7vgm4',
-    title: 'Тизер для УМЛАУТ.'
+    video: 'https://www.youtube.com/embed/2vRRgi7vgm4',
+    title: 'Тизер для УМЛАУТ.',
+    class: 'umlaut'
+  }, {
+    video: 'https://www.youtube.com/embed/Zp7vsmlibc0',
+    title: 'Видосик для инсты.',
+    imageForVideo: 'assets/rej/alina.jpg',
+    class: 'alina'
+  }, {
+    imageForVideo: 'assets/rej/wake.jpg',
+    video: 'https://www.youtube.com/embed/6tPACeA5z9g',
+    title: 'Вейк станция в Питере.'
   }];
 
   constructor(public viewportScroller: ViewportScroller, private cdr: ChangeDetectorRef) {
