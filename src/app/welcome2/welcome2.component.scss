@@ -207,7 +207,7 @@ div.portfolio-container {
   width: 100%;
   height: auto;
   object-fit: contain;
-  transition: width .2s ease-in-out;
+  transition: width .3s ease-in-out;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.32);
 
   &.tabascov {
@@ -464,8 +464,8 @@ div.footer-subline {
   }
 
   .portfolio-title {
-    //margin-bottom: 0;
-    //margin-top: -80px;
+    margin-top: 200px;
+    margin-bottom: 0;
   }
 
   //.person-container.stepa {
