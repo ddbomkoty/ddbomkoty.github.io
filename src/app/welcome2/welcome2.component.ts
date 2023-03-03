@@ -34,6 +34,11 @@ export class Welcome2Component implements OnInit {
   showFlag2: boolean = false;
   selectedImageIndex2: number = -1;
 
+  timeout: number | undefined;
+  isScrolling = false;
+  isScrollingUp = false;
+  lastScrollTop = 0;
+
   portfolioImages: Array<any> = [{
     video: 'https://youtu.be/-y4IV-Jcl74',
     title: 'Дипломный кейс для теле2.',
@@ -101,6 +106,25 @@ export class Welcome2Component implements OnInit {
     } else {
       this.showScrollToTopButton = false;
     }
+
+    clearTimeout(this.timeout);
+
+    if (!this.isScrolling) {
+      this.isScrolling = true;
+    }
+
+    this.timeout = setTimeout(() => {
+      this.isScrolling = false;
+      this.cdr.detectChanges();
+    }, 200);
+
+    const st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > this.lastScrollTop) {
+      this.isScrollingUp = false;
+    } else if (st < this.lastScrollTop) {
+      this.isScrollingUp = true;
+    } // else was horizontal scroll
+    this.lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
   }
 
 

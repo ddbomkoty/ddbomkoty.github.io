@@ -52,13 +52,13 @@
               [appParallax]="-8"
               mat-button color="accent"
               (click)="scrollToElement(portfolio)">
-        Портфолио
+        Креатив
       </button>
 
       <button class="link-button"
               mat-button
               (click)="scrollToElement(ps)">
-        P.S.
+        Музыка & Видео
       </button>
     </div>
   </div>
@@ -143,6 +143,7 @@
         <img *ngFor="let image of portfolioImages; let i = index"
              [src]="image.video ? image.imageForVideo : image.image"
              [className]="image.class"
+             [ngStyle]="{top: isScrolling && isScrollingUp ? -(portfolioImages.length - i - 1) * 10 +'px' : isScrolling && !isScrollingUp ? (i - 1) * 10 +'px' : '0'}"
              (click)="showLightbox(i)"/>
 
         <ng-image-fullscreen-view
@@ -191,6 +192,7 @@
       <div class="image-gallery">
         <img *ngFor="let image of myVideos; let i = index"
              [src]="image.video ? image.imageForVideo : image.image"
+             [ngStyle]="{top: isScrolling && isScrollingUp ? -(myVideos.length - i - 1) * 10 +'px' : isScrolling && !isScrollingUp ? (i - 1) * 10 +'px' : '0'}"
              [className]="image.class"
              (click)="showLightbox2(i)"/>
 
