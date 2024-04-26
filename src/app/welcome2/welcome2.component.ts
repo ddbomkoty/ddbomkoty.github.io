@@ -191,6 +191,7 @@ export class Welcome2Component implements OnInit {
     // @ts-ignore
     const a = event.currentTarget.getBoundingClientRect();
     (event.currentTarget as HTMLDivElement).style.maxHeight = a.height + 'px';
+    (event.currentTarget as HTMLDivElement).style.transform = 'translateX(-10px)';
     // debugger;
   }
 }
